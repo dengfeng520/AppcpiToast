@@ -1,6 +1,8 @@
 <h1>AppcpiToast</h1>
 
+
 --
+
 **AppcpiToast是一个自定义的iOS提示插件Class,支持iOS 9之后的版本**
 
 --
@@ -20,7 +22,7 @@ or
 pod 'AppcpiToast', :git => 'https://github.com/dengfeng520/AppcpiToast'
 ```
  
-* 2、Install the pod by running pod install.
+* 2、Install the pod by running `pod install`.
 
 * 3、 Include APPCPIToast wherever you need it with `#import "AppcpiToast.h"`
 

@@ -24,7 +24,7 @@ pod 'AppcpiToast', :git => 'https://github.com/dengfeng520/AppcpiToast'
  
 * 2、Install the pod by running `pod install`.
 
-* 3、 Include APPCPIToast wherever you need it with `#import "AppcpiToast.h"`
+* 3、 Include APPCPIToast wherever you need it with `#import "AppcpiToastView+Category.h"`
 
 --
 <h3>Usage</h3>

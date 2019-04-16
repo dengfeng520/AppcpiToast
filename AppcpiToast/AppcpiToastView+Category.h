@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  * isAnimation : 显示时是否使用动画。
  * --------------------------------------------------------------------
  */
-+(instancetype)showLTToastViewAnimation:(UIView *)AddView toastWithFrame:(CGRect)frame isAnimation:(BOOL)animation;
++ (instancetype)showLTToastViewAnimation:(UIView *)AddView toastWithFrame:(CGRect)frame isAnimation:(BOOL)animation;
 /* --------------------------------------------------------------------
  * Hide the parent trying to load the last loaded 'AppcpiToastView',he counterpart to this method is 'showToastViewAnimation:isAnimation'.
  * isAnimation : Whether to load animation.
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 成功移除了'AppcpiToastView'，返回'YES',反之为'NO'。
  * --------------------------------------------------------------------
  */
-+(BOOL)hiddenLTToastViewAnimation:(UIView *)AddView isAnimation:(BOOL)animation;
++ (BOOL)hiddenLTToastViewAnimation:(UIView *)AddView isAnimation:(BOOL)animation;
 /* --------------------------------------------------------------------
  * Hide and remove all 'AppcpiToastView' on the parent view
  * return YES if a 'ToaatView' was found and removed, NO otherwise.
@@ -39,33 +39,33 @@ NS_ASSUME_NONNULL_BEGIN
  * 隐藏并移除父视图上的所有'AppcpiToastView'
  * --------------------------------------------------------------------
  */
-+(NSInteger)hiddenSuperViewAllToastView:(UIView *)addView isAnimation:(BOOL)animation;
++ (NSInteger)hiddenSuperViewAllToastView:(UIView *)addView isAnimation:(BOOL)animation;
 /* --------------------------------------------------------------------
  * Find if the parent view has 'AppcpiToastView' and returns it.
  * --------------------------------------------------------------------
  * 查找父视图上是否有'AppcpiToastView'
  * --------------------------------------------------------------------
  */
-+(AppcpiToastView *)toastForAddView:(UIView *)addView;
++ (AppcpiToastView *)toastForAddView:(UIView *)addView;
 /* --------------------------------------------------------------------
  * Hide the 'AppcpiToastView' after a delay.
  * --------------------------------------------------------------------
  * 显示之后开启一个计时器，指定时间后隐藏
  * --------------------------------------------------------------------
  */
--(void)hiddenLTToastViewAnimation:(BOOL)animated afterDelay:(NSTimeInterval)delay;
+- (void)hiddenLTToastViewAnimation:(BOOL)animated afterDelay:(NSTimeInterval)delay;
 /* --------------------------------------------------------------------
  *
  *
  * --------------------------------------------------------------------
  */
--(void)showToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion;
+- (void)showToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion;
 /* --------------------------------------------------------------------
  *
  *
  * --------------------------------------------------------------------
  */
--(void)hiddenToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion;
+- (void)hiddenToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion;
 
 @end
 

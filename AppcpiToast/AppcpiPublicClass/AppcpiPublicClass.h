@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // Whether the character is null.
-+(BOOL)isStringNull:(NSString *)string;
++ (BOOL)isStringNull:(NSString *)string;
 // If the device is an iPhoneX
-+(BOOL)isiPhoneXDevice;
++ (BOOL)isiPhoneXDevice;
 
 @end
 

@@ -11,7 +11,7 @@
 @implementation AppcpiToastView (Category)
 
 // MARK: - ====================
-+(instancetype)showLTToastViewAnimation:(UIView *)AddView toastWithFrame:(CGRect)frame isAnimation:(BOOL)animation{
++ (instancetype)showLTToastViewAnimation:(UIView *)AddView toastWithFrame:(CGRect)frame isAnimation:(BOOL)animation {
     NSAssert(AddView, @"View must not be nil.");
     AppcpiToastView *toastView = [[self alloc]initWithView:AddView toastWithFrame:frame];
     [toastView showToastWithAnimated:animation];
@@ -21,19 +21,19 @@
 }
 
 // ====================
-- (id)initWithView:(UIView *)addView toastWithFrame:(CGRect)frame{
+- (id)initWithView:(UIView *)addView toastWithFrame:(CGRect)frame {
     NSAssert(addView, @"View must not be nil.");
     return [self initWithFrame:frame];
 }
 
--(void)showToastWithAnimated:(BOOL)animated {
+- (void)showToastWithAnimated:(BOOL)animated {
     [self showToastWithAnimated:animated completion:^(BOOL finished) {
         
     }];
 }
 
 // ====================
--(void)showToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion{
+- (void)showToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion {
     self.isLoaded = NO;
     self.isUseAnimation = animated;
     //--------------------------------
@@ -56,7 +56,7 @@
 }
 
 // ====================
--(void)upAndDownLoopAnimation{
+- (void)upAndDownLoopAnimation {
     
     CABasicAnimation *moveAnimation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     moveAnimation.removedOnCompletion = NO;
@@ -70,11 +70,11 @@
 
 
 // MARK: - ====================
-+(BOOL)hiddenLTToastViewAnimation:(UIView *)AddView isAnimation:(BOOL)animation{
++ (BOOL)hiddenLTToastViewAnimation:(UIView *)AddView isAnimation:(BOOL)animation {
     NSAssert(AddView, @"View must not be nil.");
     AppcpiToastView *toastView = [self toastForAddView:AddView];
     __block BOOL returnBool = NO;
-    if(toastView != nil) {
+    if (toastView != nil) {
         
         [toastView hiddenToastWithAnimated:YES completion:^(BOOL finished) {
             returnBool = finished;
@@ -85,7 +85,7 @@
 }
 
 // ====================
--(void)hiddenToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion{
+- (void)hiddenToastWithAnimated:(BOOL)animated completion:(void(^)(BOOL finished))completion {
     self.isLoaded = NO;
     self.isUseAnimation = animated;
     //--------------------------------
@@ -103,7 +103,7 @@
     }];
 }
 
--(void)hiddenLTToastViewAnimation:(BOOL)animation{
+- (void)hiddenLTToastViewAnimation:(BOOL)animation {
     
     [self hiddenToastWithAnimated:animation completion:^(BOOL finished) {
         
@@ -111,7 +111,7 @@
 }
 
 // ====================
-+(AppcpiToastView *)toastForAddView:(UIView *)addView{
++ (AppcpiToastView *)toastForAddView:(UIView *)addView {
     NSEnumerator *subviewsEnum = [addView.subviews reverseObjectEnumerator];
     for (UIView *subview in subviewsEnum) {
         if ([subview isKindOfClass:self]) {
@@ -126,7 +126,7 @@
 
 
 // MARK: - ====================
-+(NSInteger)hiddenSuperViewAllToastView:(UIView *)addView isAnimation:(BOOL)animation{
++ (NSInteger)hiddenSuperViewAllToastView:(UIView *)addView isAnimation:(BOOL)animation {
     NSAssert(addView, @"View must not be nil.");
     NSArray *toastList = [self alltoastViewSForView:addView];
     for (AppcpiToastView *toastView in toastList) {
@@ -135,7 +135,7 @@
     return [toastList count];
 }
 
-+(NSArray *)alltoastViewSForView:(UIView *)addView {
++ (NSArray *)alltoastViewSForView:(UIView *)addView {
     NSMutableArray *toastList = [NSMutableArray array];
     NSArray *subviews = addView.subviews;
     for (UIView *aView in subviews) {
@@ -147,12 +147,12 @@
 }
 
 // MARK: - ====================
--(void)hiddenLTToastViewAnimation:(BOOL)animated afterDelay:(NSTimeInterval)delay {
+- (void)hiddenLTToastViewAnimation:(BOOL)animated afterDelay:(NSTimeInterval)delay {
     
     [self performSelector:@selector(hiddenLTToastViewAnimation:) withObject:[NSNumber numberWithBool:animated] afterDelay:delay];
 }
 
--(void)setAboutDelay:(float)aboutDelay{
+- (void)setAboutDelay:(float)aboutDelay {
     
      [self performSelector:@selector(hiddenLTToastViewAnimation:) withObject:[NSNumber numberWithBool:self.isUseAnimation] afterDelay:aboutDelay];
 }

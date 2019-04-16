@@ -21,16 +21,16 @@
 
 @implementation AppcpiToastView
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if(self){
+    if (self) {
         
         [self createToastCommonData];
     }
     return self;
 }
 
--(void)createToastCommonData{
+- (void)createToastCommonData {
     
     //--------------------------------
     _isLoaded = NO;
@@ -48,7 +48,7 @@
 }
 
 //
-- (void)setupViews{
+- (void)setupViews {
     //--------------------------------
     _topView = [[UIView alloc]initWithFrame:CGRectMake(self.indicationSize, 3, 21, 21)];
     [self addSubview:_topView];
@@ -74,33 +74,34 @@
 }
 
 //--------------------------------
--(void)setBackViewRadius:(float)backViewRadius{
+-  (void)setBackViewRadius:(float)backViewRadius{
     _backgroundView.layer.cornerRadius = backViewRadius;
 }
+
 //--------------------------------
--(void)setTitleChar:(NSString *)titleChar{
-    
-    if([AppcpiPublicClass isStringNull:titleChar] == false){
+- (void)setTitleChar:(NSString *)titleChar {
+    if ([AppcpiPublicClass isStringNull:titleChar] == false) {
         _titleTxtLab.text = titleChar;
-    }else{
+    } else {
         return;
     }
 }
+
 //--------------------------------
--(void)setFontSize:(float)fontSize{
+- (void)setFontSize:(float)fontSize {
     _titleTxtLab.font = [UIFont fontWithName:@"Helvetica-Bold" size:fontSize];
 }
 //--------------------------------
--(void)setTitleColor:(UIColor *)titleColor{
+- (void)setTitleColor:(UIColor *)titleColor {
     _titleTxtLab.textColor = titleColor;
 }
 //--------------------------------
--(void)setBackgroundColor:(UIColor *)backgroundColor{
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
     _backgroundView.backgroundColor = backgroundColor;
     _topView.backgroundColor = backgroundColor;
 }
 //--------------------------------
--(void)dealloc{
+- (void)dealloc {
     [self reloadInputViews];
 }
 

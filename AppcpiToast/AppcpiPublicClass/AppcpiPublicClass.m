@@ -11,7 +11,7 @@
 @implementation AppcpiPublicClass
 
 // MARK: - ==========================
-+(BOOL)isStringNull:(NSString *)string{
++ (BOOL)isStringNull:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;
     }
@@ -34,7 +34,7 @@
 }
 
 // MARK: - ==========================
-+(BOOL)isiPhoneXDevice{
++ (BOOL)isiPhoneXDevice {
     BOOL iPhoneX = NO;
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
         return iPhoneX;
